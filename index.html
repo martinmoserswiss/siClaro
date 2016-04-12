@@ -16,8 +16,8 @@
 		<!--[if lte IE 8]>
 		<script src="libs/ie/html5shiv.js"></script><![endif]-->
 		<script src="libs/jquery.min.js"></script>
-        <script src="libs/angular.js"></script>
-        <script src="libs/ng-infinite-scroll.js"></script>
+    <script src="libs/angular.js"></script>
+    <script src="libs/ng-infinite-scroll.js"></script>
 		<script src="libs/angular-route.js"></script>
 
 		<!--Template Scripts -->
@@ -29,32 +29,14 @@
 		<!--[if lte IE 8]>
 		<script src="libs/ie/respond.min.js"></script><![endif]-->
 
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers/imageListController.js"></script>
+
 	</head>
-	<body>
+	<body ng-app="siClaro">
 
-    <div ng-app='myApp' ng-controller='DemoController'>
-        <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
-            <img height="500" width="500" ng-repeat='image in images' ng-src='images/{{image}}'>
-        </div>
-    </div>
+		<div ng-view/>
 
-
-
-    <script>
-        var myApp = angular.module('myApp', ['infinite-scroll']);
-        myApp.controller('DemoController', function($scope) {
-            $scope.images = ["portugal/p14-1-10.jpg", "baja/P1000394.jpg", "baja/P1000432.jpg", "baja/P1010144.jpg", "baja/P1010197.jpg", "baja/P1010287.jpg", "london/l1.jpg", "london/l2.jpg"];
-
-            $scope.loadMore = function() {
-                var last = $scope.images[$scope.images.length - 1];
-                for(var i = 1; i <= 3; i++) {
-                    $scope.images.push(last + i);
-                }
-            };
-        });
-    </script>
-
-	<!-- Portfolio -->
 	<!--
         <div class="wrapper style3">
             <article id="portfolio">
