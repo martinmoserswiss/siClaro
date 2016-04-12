@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SiClaro</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/main.css" />
+		<!--[if lte IE 8]>
+		<link rel="stylesheet" href="css/ie8.css"/><![endif]-->
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="css/ie9.css"/><![endif]-->
+
+		<!-- Scripts -->
+		<!--[if lte IE 8]>
+		<script src="libs/ie/html5shiv.js"></script><![endif]-->
+		<script src="libs/jquery.min.js"></script>
+        <script src="libs/angular.js"></script>
+        <script src="libs/ng-infinite-scroll.js"></script>
+		<script src="libs/angular-route.js"></script>
+
+		<!--Template Scripts -->
+		<script src="libs/main.js"></script>
+		<script src="libs/util.js"></script>
+		<script src="libs/jquery.scrolly.min.js"></script>
+		<script src="libs/skel.min.js"></script>
+		<script src="libs/skel-viewport.min.js"></script>
+		<!--[if lte IE 8]>
+		<script src="libs/ie/respond.min.js"></script><![endif]-->
+
+	</head>
+	<body>
+
+    <div ng-app='myApp' ng-controller='DemoController'>
+        <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+            <img height="500" width="500" ng-repeat='image in images' ng-src='images/{{image}}'>
+        </div>
+    </div>
+
+
+
+    <script>
+        var myApp = angular.module('myApp', ['infinite-scroll']);
+        myApp.controller('DemoController', function($scope) {
+            $scope.images = ["portugal/p14-1-10.jpg", "baja/P1000394.jpg", "baja/P1000432.jpg", "baja/P1010144.jpg", "baja/P1010197.jpg", "baja/P1010287.jpg", "london/l1.jpg", "london/l2.jpg"];
+
+            $scope.loadMore = function() {
+                var last = $scope.images[$scope.images.length - 1];
+                for(var i = 1; i <= 3; i++) {
+                    $scope.images.push(last + i);
+                }
+            };
+        });
+    </script>
+
+	<!-- Portfolio -->
+	<!--
+        <div class="wrapper style3">
+            <article id="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/portugal/p14-1-10.jpg" alt="" /></a>
+                                <h3><a href="#">Ericeira 2014</a></h3>
+                                <p>Ferienfoto aus Portugal.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/baja/P1000394.jpg" alt="" /></a>
+                                <h3><a href="#">Baja 2013</a></h3>
+                                <p>Ferienfoto aus Mexico.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/baja/P1000432.jpg" alt="" /></a>
+                                <h3><a href="#">Baja 2013</a></h3>
+                                <p>Ferienfoto aus Mexico.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/baja/P1010144.jpg" alt="" /></a>
+                                <h3><a href="#">Baja 2013</a></h3>
+                                <p>Ferienfoto aus Mexico.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/baja/P1010197.jpg" alt="" /></a>
+                                <h3><a href="#">Baja 2013</a></h3>
+                                <p>Ferienfoto aus Mexico.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/baja/P1010287.jpg" alt="" /></a>
+                                <h3><a href="#">Baja 2013</a></h3>
+                                <p>Ferienfoto aus Mexico.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/london/l1.jpg" alt="" /></a>
+                                <h3><a href="#">London 2015</a></h3>
+                                <p>Trinktour</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/london/l2.jpg" alt="" /></a>
+                                <h3><a href="#">London 2015</a></h3>
+                                <p>Trinktour</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/london/l3.jpg" alt="" /></a>
+                                <h3><a href="#">London 2015</a></h3>
+                                <p>Trinktour</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/peru/peru15-10.jpg" alt="" /></a>
+                                <h3><a href="#">Peru 2015</a></h3>
+                                <p>Vamos Peru!</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/peru/peru15-18.jpg" alt="" /></a>
+                                <h3><a href="#">Peru 2015</a></h3>
+                                <p>Vamos Peru!</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/peru/peru15-21.jpg" alt="" /></a>
+                                <h3><a href="#">Peru 2015</a></h3>
+                                <p>Vamos Peru!</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/peru/peru15-29.jpg" alt="" /></a>
+                                <h3><a href="#">Peru 2015</a></h3>
+                                <p>Vamos Peru!</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u 12u(mobile)">
+                            <article class="box style2">
+                                <a href="#" class="image featured"><img src="images/peru/peru15-42.jpg" alt="" /></a>
+                                <h3><a href="#">Peru 2015</a></h3>
+                                <p>Vamos Peru!</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        -->
+
+	</body>
+</html>
