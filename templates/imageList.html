@@ -4,14 +4,16 @@
       <article id="portfolio">
         <div class="container">
 
-          <div class="row" ng-repeat='image in images'>
+          <div class="row" ng-repeat='image in provided'>
             <div class="12u 12u(mobile)">
               <article class="box style2">
                 <a href="#" class="image featured">
-                  <img ng-src='images/{{image}}' alt="" />
+                  <img ng-src='images/{{image.path}}' alt="" />
                 </a>
-                <h3><a href="#">Ericeira 2014</a></h3>
-                <p>Ferienfoto aus Portugal.</p>
+                <h3><a href="#" ng-bind="image.title"></a></h3>
+                <p>
+                  <span ng-bind="image.subtitle"/><span>, </span><span ng-bind="image.year"/>
+                </p>
               </article>
             </div>
           </div>
