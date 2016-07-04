@@ -4,6 +4,66 @@ siClaro.factory('ImagesDataService', function() {
 
     srv._testImages = [
         {
+            title : 'Brazil',
+            subtitle: 'Morro de São Paulo',
+            year: '2016',
+            path : "brazil/1.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'Stella Maris',
+            year: '2016',
+            path : "brazil/2.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'Itacré',
+            year: '2016',
+            path : "brazil/3.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'Morning spirit @ Engenhoca',
+            year: '2013',
+            path : "brazil/4.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'Salvador',
+            year: '2016',
+            path : "brazil/5.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'easy & relaxed',
+            year: '2016',
+            path : "brazil/6.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'Morro de São Paulo',
+            year: '2016',
+            path : "brazil/7.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'Caraiva',
+            year: '2013',
+            path : "brazil/8.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'Jungle is massiv',
+            year: '2016',
+            path : "brazil/9.jpg",
+        },
+        {
+            title : 'Brazil',
+            subtitle: 'You\'re welcome, come in!',
+            year: '2016',
+            path : "brazil/10.jpg",
+        },
+        {
             title : 'Portugal',
             subtitle: 'Ericeira',
             year: '2014',
